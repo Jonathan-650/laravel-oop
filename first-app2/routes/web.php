@@ -2,6 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
+// Controller
+
+// Call the controller
+use App\Http\Controllers\HomepageController;
+
+Route::prefix('/')->group(function () {
+    //no more animal
+
+    // Define the endpoint
+    Route::get('/homepage', [HomepageController::class, 'index']);
 });

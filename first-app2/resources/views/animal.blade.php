@@ -11,34 +11,14 @@
 </head>
 <body>
     <div class="card p-4 m-2 w-auto">
-        <h1>Welcome to {{$name}}</h1>
-        <p>{{$address->street}}</p>
-        <p>{{$address->city}}</p>
-        <h6>Promotions</h6>
+        <h1>Hi, I'm {{$name}}</h1>
+        <p>{{$bio}}</p>
+        <h6>Teritory</h6>
         <ul>
-        @foreach($promo as $dt)
+        @foreach($teritory as $dt)
             <li>{{$dt}}</li>
         @endforeach
         </ul>
-        <h6>Menu</h6>
-        <table class="table_menu">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Food</th>
-                    <th scope="col">Price</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($menu as $idx => $dt)
-                <tr>
-                    <th scope="row">{{$idx+1}}</th>
-                    <td>{{$dt->food}}</td>
-                    <td>Rp. {{$dt->price}}K</td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
     </div>
 </body>
 </html>
