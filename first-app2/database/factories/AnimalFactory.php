@@ -18,7 +18,13 @@ class AnimalFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'id' => fake()->uuid(),
+            'name' => fake()->name(),
+            'location' => fake()->address(),
+            'description' => fake()->paragraph(),
+            'capacity' => fake()->mt_rand(),
+            'status' => fake()->randomElement(['operational', 'maintenance', 'quarantine']),
+            'note' => fake()->paragraph(), 
         ];
     }
 }
