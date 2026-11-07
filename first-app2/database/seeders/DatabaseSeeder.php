@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 use App\Models\ClassCleaningDuty;
+use App\Models\Event;
 
 use Illuminate\Support\Facades\DB;
 
@@ -20,8 +21,10 @@ class DatabaseSeeder extends Seeder
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         ClassCleaningDuty::truncate();
+        Event::truncate();
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
         ClassCleaningDuty::factory(5)->create();
+        Event::factory(5)->create();
     }
 }
